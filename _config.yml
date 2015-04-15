@@ -1,0 +1,16 @@
+# Site settings
+title: 王晓磊贴代码用的Blog
+email: 
+description: >
+  这个Blog不会经常更新。我的文章一般只发在微博上，而且大部分不是技术文章。
+  开这个Blog纯粹是为了贴代码方便。
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://quotation.github.io" # the base hostname & protocol for your site
+twitter_username: 
+github_username:  quotation
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
