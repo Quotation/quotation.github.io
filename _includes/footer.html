@@ -5,14 +5,14 @@
     <!-- <h2 class="footer-heading">{{ site.title }}</h2> -->
 
     <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
+<!--       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
           <li>{{ site.title }}</li>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
         </ul>
       </div>
-
-      <div class="footer-col  footer-col-2">
+ -->
+      <div class="footer-col  footer-col-1">
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
@@ -42,7 +42,24 @@
             </a>
           </li>
           {% endif %}
+
+          {% if site.weibo_username %}
+          <li>
+            <a href="http://weibo.com/{{ site.weibo_userurl }}">
+              <span class="icon  icon--weibo">
+                <img src="http://www.sinaimg.cn/blog/developer/wiki/LOGO_16x16.png">
+                </img>
+              </span>
+
+              <span class="username">{{ site.weibo_username }}</span>
+            </a>
+          </li>
+          {% endif %}
         </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <p>&nbsp;</p>
       </div>
 
       <div class="footer-col  footer-col-3">

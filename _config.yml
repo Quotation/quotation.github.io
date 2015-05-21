@@ -7,7 +7,9 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://quotation.github.io" # the base hostname & protocol for your site
 twitter_username: 
-github_username:  quotation
+github_username: Quotation
+weibo_username: 王_晓磊
+weibo_userurl: xiaoleiwang
 
 # Build settings
 markdown: kramdown
