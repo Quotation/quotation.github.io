@@ -5,6 +5,20 @@ date:   2015-05-21 10:30:00
 categories: objc
 ---
 
+#### 目录
+<!-- MarkdownTOC -->
+
+- Non Fragile ivars
+- 为什么Non Fragile ivars很关键
+- 如何寻址类成员变量
+- 真正的“如何寻址类成员变量”
+- Non Fragile ivars布局调整
+- 为什么Objective-C类不能动态添加成员变量
+- 总结
+
+<!-- /MarkdownTOC -->
+
+
 看下面的代码，考虑Objective-C里最常见的操作之一——类成员变量访问。
 
 ```
@@ -36,11 +50,7 @@ categories: objc
 
 这是苹果官方文档[Objective-C Runtime Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtVersionsPlatforms.html#//apple_ref/doc/uid/TP40008048-CH106-SW1)上的一段话，意思是在“modern runtime”里，如果你修改了基类的成员变量布局（比如增加成员变量），子类不需要重新编译。这是一个巨大的改动，在文档中当做“modern runtime”最重要的修改点被提出来。
 
-这个特性的重大意义在于，Objective-C的库从此具有了**“二进制兼容性”**。举例来说，你在项目里用了第三方提供的静态库SDK，包含一些`.h`和一个`.a`文件。当iOS SDK的版本从6升到了7，又从7升到了8时，你都不需要更新这个SDK。虽然iOS SDK版本升级时，苹果在UIView等基类中加入了更多的成员变量，但是以前发布的静态库SDK不需要重新编译还能正常使用。
-
-幸好我们已经不在那个黑暗时代了，iOS从一开始就是用的modern runtime。可以想象以前的Mac开发者是如何忍受这个问题的：每次MacOS发布新版本，都要重新编译自己的程序，跟着发布新版本。
-
-Cocoa Samurai的文章[Understanding the Objective-C Runtime](http://www.sealiesoftware.com/blog/archive/2009/01/27/objc_explain_Non-fragile_ivars.html)用几张图清晰地解释了Non Fragile ivars。以下图示来自他的文章。
+Cocoa Samurai的文章[Understanding the Objective-C Runtime](http://www.sealiesoftware.com/blog/archive/2009/01/27/objc_explain_Non-fragile_ivars.html)用几张图清晰地解释了Non Fragile ivars。以下借助他的图举例说明。
 
 1) 用旧版OSX SDK编译的MyObject类成员变量布局是这样的，MyObject的成员变量依次排列在基类NSObject的成员后面。
 
@@ -56,7 +66,11 @@ Cocoa Samurai的文章[Understanding the Objective-C Runtime](http://www.sealies
 
 ## 为什么Non Fragile ivars很关键
 
-基本原理就是这样。听起来并没多么先进，很多编程语言都能做到，比如Java、C#，都有二进制兼容性。可是Objective-C毕竟不是“那么”动态的语言，Objective-C代码编译后是真正的native二进制，不是byte code。Objective-C程序也不是运行在VM上，底下只有个很小的runtime。这两点，Java、C#做不到。
+这个特性的重大意义在于，Objective-C的库从此具有了**“二进制兼容性”**。举例来说，你在项目里用了第三方提供的静态库SDK，包含一些`.h`和一个`.a`文件。当iOS SDK的版本从6升到了7，又从7升到了8时，你都不需要更新这个SDK。虽然iOS SDK版本升级时，苹果在UIView等基类中加入了更多的成员变量，但是以前发布的静态库SDK不需要重新编译还能正常使用。
+
+幸好我们已经不在那个黑暗时代了，iOS从一开始就是用的modern runtime。可以想象以前的Mac开发者是如何忍受这个问题的：每次MacOS发布新版本，都要重新编译自己的程序，跟着发布新版本。
+
+Non Fragile ivars的基本原理就是这样。听起来并没多么先进，很多编程语言都能做到，比如Java、C#，都有二进制兼容性。可是Objective-C毕竟不是“那么”动态的语言，Objective-C代码编译后是真正的native二进制，不是byte code。Objective-C程序也不是运行在VM上，底下只有个很小的runtime。这两点，Java、C#做不到。
 
 那Non Fragile ivars是如何实现的呢？最关键的点是，**当成员变量布局调整后，静态编译的native程序怎么能找到变量的新偏移位置呢**？
 
