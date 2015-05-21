@@ -1,4 +1,27 @@
 /**
+ * http://mastermay.github.io/text-autospace.js/
+ */
+html.han-la hanla:after {
+    content: " ";
+    display: inline;
+    font-family: Arial;
+    font-size: 0.89em;
+}
+
+html.han-la code hanla,
+html.han-la pre hanla,
+html.han-la kbd hanla,
+html.han-la samp hanla {
+    display: none;
+}
+
+html.han-la ol > hanla,
+html.han-la ul > hanla {
+    display: none;
+}
+
+
+/**
  * Reset some basic elements
  */
 body, h1, h2, h3, h4, h5, h6,
