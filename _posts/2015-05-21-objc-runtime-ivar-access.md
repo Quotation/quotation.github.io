@@ -230,3 +230,6 @@ class_addMethod([NSObject class], @selector(someMethod), ...);
 
 ## 总结
 Objective-C的“Non Fragile ivars”特性，以极低的运行时开销换取了程序的二进制兼容性。并且可执行文件仍然是目标平台上的native程序，不需要运行在VM上。实在是设计权衡取舍的典范。
+
+#### 版权声明：
+**本文章在微信公众平台的发表权，已「独家代理」给 iOS开发(iOSDevTips)。**
