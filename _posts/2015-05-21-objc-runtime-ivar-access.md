@@ -212,12 +212,12 @@ class_ro_t class_ro_MyClass = {
 ```
 MyObject *obj = [[MyObject alloc] init];
 
-// 基类增加一个4字节的成员变量newVar
+// 基类增加一个4字节的成员变量someVar
 class_addIvar([NSObject class], "someVar", 4, ...);
-// 基类增加方法someMethod，用到了newVar
+// 基类增加方法someMethod，用到了someVar
 class_addMethod([NSObject class], @selector(someMethod), ...);
 
-// 调用someMethod，修改了newVar
+// 调用someMethod，修改了someVar
 [obj someMethod];
 
 // 访问子类成员变量，会发生什么？
