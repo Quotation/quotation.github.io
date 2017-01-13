@@ -43,7 +43,7 @@ CLion使用CMake系统，项目文件就是`CMakeLists.txt`。
 
 首先，创建一个公用的toolchain配置文件`toolchain-arm-eabi-gcc.cmake`，这个文件让CMake使用`gcc-arm-none-eabi` toolchain中的工具，并设置特定平台的编译参数等。文件内容如下。
 
-```toolchain-arm-eabi-gcc.cmake```
+`toolchain-arm-eabi-gcc.cmake`
 
 ```cmake
 include(CMakeForceCompiler)
@@ -83,7 +83,7 @@ set(BUILD_SHARED_LIBS OFF)
 
 然后，在代码根目录下创建`CMakeLists.txt`，下面只是个示例（写得也不够好）。具体写法根据项目调整。注意最后一段，需要生成出`.elf`和`.bin`文件。
 
-```CMakeLists.txt```
+`CMakeLists.txt`
 
 ```cmake
 cmake_minimum_required(VERSION 3.3)
@@ -167,7 +167,7 @@ Build一下试试。如果有编译错误，修复之，直到正常编译出`.e
 
 （Mac系统自带了expect命令。Windows系统应该可以装ActiveState提供的[Expect for Windows](http://www.activestate.com/activetcl/expect)，没试过。）
 
-```writeflash.expect.sh```
+`writeflash.expect.sh`
 
 ```
 #!/usr/bin/expect
