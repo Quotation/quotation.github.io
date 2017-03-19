@@ -172,7 +172,21 @@ pre {
     }
 }
 
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
+th, td {
+    vertical-align: top;
+    padding: 8px;
+    border-top: 1px solid #ccc;
+}
+
+th {
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+}
 
 /**
  * Wrapper
