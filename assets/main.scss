@@ -1,0 +1,60 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$base-font-family: 'Segoe UI',Arial,Helvetica,'Microsoft Jhenghei','Hiragino Sans GB','WenQuanYi Zen Hei','Microsoft Yahei',SimHei,STHeiti,'WenQuanYi Micro Hei',sans-serif;
+$base-mono-font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+
+
+// Import partials from the `minima` theme.
+@import "minima";
+
+
+/**
+ * http://mastermay.github.io/text-autospace.js/
+ */
+html.han-la hanla:after {
+    content: " ";
+    display: inline;
+    font-family: Arial;
+    font-size: 0.89em;
+}
+
+html.han-la code hanla,
+html.han-la pre hanla,
+html.han-la kbd hanla,
+html.han-la samp hanla {
+    display: none;
+}
+
+html.han-la ol > hanla,
+html.han-la ul > hanla {
+    display: none;
+}
+
+/**
+ *
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table {
+  border: 1px solid #373737;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+th {
+  padding: 10px;
+  background: #373737;
+  color: #fff;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #373737;
+}

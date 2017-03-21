@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "使用CLion做嵌入式开发"
 date:   2017-01-13 13:00:00
 categories: development

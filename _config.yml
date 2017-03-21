@@ -2,8 +2,7 @@
 title: 王晓磊贴代码用的Blog
 email: 
 description: >
-  这个Blog不会经常更新。我的文章一般只发在微博上，而且大部分不是技术文章。
-  开这个Blog纯粹是为了贴代码方便。
+  这里主要用来贴有代码的文章，其他文章都发在微博上。
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://quotation.github.io" # the base hostname & protocol for your site
 twitter_username: 
@@ -11,8 +10,18 @@ github_username: Quotation
 weibo_username: 王_晓磊
 weibo_userurl: xiaoleiwang
 
-# Build settings
-markdown: kramdown
+footer_links:
+  - { title: "崑曲工尺譜數字化", url: "http://gongchepu.net/" }
+  - { title: "全国空气质量历史数据", url: "http://beijingair.sinaapp.com/" }
 
+# Build settings
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+markdown: kramdown
 kramdown:
   input: GFM

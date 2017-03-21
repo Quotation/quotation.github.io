@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "《小灵通漫游未来》何时到来？"
 date:   2017-03-20 01:00:00
 categories: future

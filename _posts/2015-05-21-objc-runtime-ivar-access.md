@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: default
 title:  "Objective-C类成员变量深度剖析"
 date:   2015-05-21 10:30:00
-categories: objc
+categories: development objc
 ---
 
 #### 目录
@@ -15,6 +15,7 @@ categories: objc
 - Non Fragile ivars布局调整
 - 为什么Objective-C类不能动态添加成员变量
 - 总结
+    - 版权声明：
 
 <!-- /MarkdownTOC -->
 

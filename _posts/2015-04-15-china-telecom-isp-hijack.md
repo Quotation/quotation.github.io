@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: default
 title:  "中国电信劫持HTTP流量强插广告"
 date:   2015-04-15 22:50:35
-categories: Web
+categories: development web
 ---
 
 ## 现象
