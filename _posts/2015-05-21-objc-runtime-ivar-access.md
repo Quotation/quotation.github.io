@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Objective-C类成员变量深度剖析"
 date:   2015-05-21 10:30:00
 categories: objc
