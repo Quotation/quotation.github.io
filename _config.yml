@@ -21,6 +21,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+future: true
 
 markdown: kramdown
 kramdown:
